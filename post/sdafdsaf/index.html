@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" >
 
-<title>sdafdsaf | hizinedine</title>
+<title>N1旁路由+共享文件夹【完工】 | hizinedine</title>
 <meta name="description" content="hizinedine">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://hizinedine.github.io/favicon.ico?v=1583990556756">
+<link rel="shortcut icon" href="https://hizinedine.github.io/favicon.ico?v=1583990757274">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -57,14 +57,55 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>sdafdsaf</h1>
+            <h1>N1旁路由+共享文件夹【完工】</h1>
             <p class="article-meta">
               2020-03-12
               
             </p>
             
             <div class="post-content">
-              <p>sadfadsfsdf</p>
+              <p>设备：k2（主路由）+k2（AP扩展无线范围）+N1（旁路由）<br>
+实现：旁路由梯子+共享文件夹</p>
+<p>1.k2用的是老毛子，N1，用的是flippy的29+<br>
+固件下载地址<br>
+https://www.right.com.cn/forum/thread-981406-1-1.html</p>
+<p>2.刷机教程，参考<br>
+https://www.hi-pda.com/forum/viewthread.php?tid=2680890&amp;extra=&amp;page=1<br>
+里面有所有的工具，软件。</p>
+<p>3.从u盘到emmc，因为机子默认是192.168.1.1，可能和很多人家里的局域网冲突，如果你不想来回改ip或者来回插拔网线，如果有条件给n1接显示器和键盘，可以直接用键盘输入</p>
+<pre><code>cd /root
+./inst-to-emmc.sh
+</code></pre>
+<p>复制代码</p>
+<p>https://www.hi-pda.com/forum/viewthread.php?tid=2695563</p>
+<p>4.N1的网关设定为主路由ip，需要走梯子的设备，设置网关为N1的ip<br>
+因为我的需求不大。</p>
+<p>5.共享文件夹，我需要在多个安卓设备，以及win10提供共享文件夹。<br>
+走了一些弯路，给大家提醒一下。<br>
+a)flippy的默认共享，是cifsd，但据他自己说，可能兼容性不好。所以，如果要使用samba的话，需要禁用cifsd，然后打开samba。<br>
+b)设置文件夹路径的时候，不要和我一样，设置为/dev/sda1。。。见笑了，应该是/mnt/sda1。</p>
+<p>然后，一切安静了。<br>
+可惜，我的k2是100m的lan。所以局域网只有100m速度。<br>
+自己随便用用倒是也够用。</p>
+<p>最后，再次感谢各位朋友的帮忙。</p>
+<hr>
+<p>旁路由挂梯子，已经弄好。</p>
+<p>问题来了，samba死活搞不定。</p>
+<p>需求：我在n1上插了个移动硬盘，作为局域网的共享硬盘。nfts格式。</p>
+<p>问题如下：<br>
+刷的是flippy的29+<br>
+说明里，是说默认开启了cifsd，需要手动关闭，并打开samba。已经打开，并且win10的网络能够看到openwrt了，打开后也能看到我设定的共享文件夹。</p>
+<h2 id="但是下一步就打不开了-找到问题了-目录应该写mntsda1而不是devsda1">但是下一步就打不开了。<br>
+找到问题了。目录应该写/mnt/sda1，而不是/dev/sda1</h2>
+<p>家里宽带100m网线入户。<br>
+目前2个k2，一个做路由器拨号，一个做ap网线连接主路由在卧室扩展无线信号。因为不能漫游，所以索性设置了2个ssid。</p>
+<p>书房的pc网线直连，平时承担娱乐，和下载功能（主要还是迅雷和百度云，当然，迅雷现在半死不活状态。只能交钱走百度云）。<br>
+下载的内容基本都在pc的3t硬盘上。<br>
+下载的文件夹直接共享。</p>
+<p>现在看电影，不管是用pad还是电视盒，我的操作，基本是<br>
+1.开pc开关，<br>
+2.设备直接访问共享文件夹，安卓用cx文件夹或者es文件夹管理器</p>
+<p>前几天因为chromebook的play商店的问题，又增加了路由器爬梯子的需求。</p>
 
             </div>
           </article>
@@ -88,7 +129,7 @@
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://hizinedine.github.io/images/avatar.png?v=1583990556756" class="no-responsive avatar">
+    <img src="https://hizinedine.github.io/images/avatar.png?v=1583990757274" class="no-responsive avatar">
     <div class="text-muted">hizinedine</div>
     <div class="social-container">
       
@@ -113,7 +154,7 @@
         
           
             <li>
-              <a href="https://hizinedine.github.io/post/sdafdsaf/">sdafdsaf</a>
+              <a href="https://hizinedine.github.io/post/sdafdsaf/">N1旁路由+共享文件夹【完工】</a>
             </li>
           
         
